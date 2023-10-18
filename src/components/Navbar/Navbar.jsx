@@ -18,7 +18,7 @@ const Navbar = () => {
                 style={({ isActive, isPending, isTransitioning }) => {
                     return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "red" : "black",
+                    color: isPending ? "white" : "green",
                     viewTransitionName: isTransitioning ? "slide" : "",
                     };
                 }}
@@ -33,7 +33,7 @@ const Navbar = () => {
                 style={({ isActive, isPending, isTransitioning }) => {
                     return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "red" : "black",
+                    color: isPending ? "white" : "green",
                     viewTransitionName: isTransitioning ? "slide" : "",
                     };
                 }}
@@ -47,7 +47,7 @@ const Navbar = () => {
                 style={({ isActive, isPending, isTransitioning }) => {
                     return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "red" : "black",
+                    color: isPending ? "white" : "green",
                     viewTransitionName: isTransitioning ? "slide" : "",
                     };
                 }}
@@ -61,7 +61,7 @@ const Navbar = () => {
                 style={({ isActive, isPending, isTransitioning }) => {
                     return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "red" : "black",
+                    color: isPending ? "white" : "green",
                     viewTransitionName: isTransitioning ? "slide" : "",
                     };
                 }}

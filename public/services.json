@@ -1,0 +1,35 @@
+[
+    {
+      "brand": "nike",
+      "name": "Nike",
+      "image": "https://i.ibb.co/PCJQLR8/1512076803-93-Nike-mobile.jpg"
+    },
+    {
+      "brand": "adidas",
+      "name": "Adidas",
+      "image": "https://i.ibb.co/1GGJ5hT/Adidas-logo.png "
+    },
+    {
+      "brand": "gucci",
+      "name": "Gucci",
+      "image": "https://i.ibb.co/MGzpQjT/Gucci-Logo.png"
+
+    },
+    {
+      "brand": "Zara",
+      "name": "zara",
+      "image": "https://i.ibb.co/bP1ZwBd/Zara-Logo-2008.png"
+    },
+    {
+      "brand": "h&m",
+      "name": "H&M",
+      "image": "https://i.ibb.co/2gfCg38/H-M-Logo-svg.png"
+    },
+    {
+      "brand": "levis",
+      "name": "Levi's",
+      "image": "https://i.ibb.co/qrzc3hp/levi-logo-4-82250bd000e1-mobile.jpg"
+    }
+   
+  ]
+  
