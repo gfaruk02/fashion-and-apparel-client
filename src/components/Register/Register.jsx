@@ -1,20 +1,61 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const Register = () => {
 
-    const handleRegister = e =>{
-      e.preventDefault();
-      const form = e.target;
-      const name = form.name.value;
-      const photo = form.photo.value;
-      const email = form.email.value;
-      const password = form.password.value;
-      console.log(name,photo,email,password);
+  const {registerUser} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [registerError, setRegisterError] = useState();
+  const [success, setSuccess] = useState();
+  const [showPassword, setShowPassword] = useState();
+
+
+
+  const handleRegister = e =>{
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name,photo,email,password);
+
+    setSuccess('');
+    if(!/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-]).{6,}$/.test(password)){
+      setRegisterError('Minimum 6 characters, at least one uppercase letter, one number and one special character:');
     }
+    else{
+      setRegisterError('');
+      registerUser(email, password)
+      .then(result=>{
+        console.log(result.user);
+
+        //update user
+        updateProfile(result.user),{
+          displayName:name,
+          photoURL: photo,
+        }
+        e.target.reset();
+        navigate("/")
+      })
+      .catch(error =>{
+        console.error(error);
+      })
+    }
+  }
 
     return (
         <div>
+          {
+           registerError &&  <p>{registerError}</p>
+          }
+          {
+            success && <p> {success} </p>
+          }
                    <div className=" min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -42,7 +83,14 @@ const Register = () => {
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+          <div className="flex items-center relative ">
+          <input name="password" type={showPassword? "text":"password"} placeholder="password" className="input input-bordered w-full" required />
+          <span className=" absolute right-2" onClick={()=>setShowPassword(!showPassword)}>
+          {
+              showPassword ? <FaEyeSlash className=" text-rose-400 text-lg"></FaEyeSlash> : <FaEye className=" text-rose-400 text-lg"></FaEye>
+          }
+          </span>
+        </div>
         </div>
         <div className="form-control mt-4 ">
           <button className="btn btn-primary">Register</button>
