@@ -34,8 +34,9 @@ const Addproduct = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
+                  form.reset();
             }
-            form.reset();
+            
         })
 
     }
@@ -88,7 +89,8 @@ const Addproduct = () => {
                     <option value="uniform">Uniform</option>
                     <option value="beg">Beg</option>
                     <option value="boot">Boot</option>
-                    {/* <option value="Boot">Boot</option> */}
+                    <option value="sportswear">Sportswear</option>
+                    <option value="jacket">Jacket</option>
                     </select>
                 </div>
                 <div className="form-control w-full">
@@ -100,6 +102,7 @@ const Addproduct = () => {
                     <option value="women">women's fashion</option>
                     <option value="men">Men's fashion</option>
                     <option value="kids">Kid's fashion</option>
+                    <option value="accessories">Accessories</option>
 
                     </select>
                 </div>
