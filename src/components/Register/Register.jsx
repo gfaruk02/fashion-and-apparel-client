@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Swal from 'sweetalert2'
 
 
 const Register = () => {
@@ -26,23 +27,40 @@ const Register = () => {
 
     setSuccess('');
     if(!/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-]).{6,}$/.test(password)){
-      setRegisterError('Minimum 6 characters, at least one uppercase letter, one number and one special character:');
+      // setRegisterError('Password Minimum 6 characters, at least one uppercase letter, one number and one special character:');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Password Minimum 6 characters, at least one uppercase letter, one number and one special character:',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
     }
     else{
       setRegisterError('');
       registerUser(email, password)
       .then(result=>{
-        console.log(result.user);
-
+        // console.log(result.user);
+        Swal.fire({
+          position: 'top-center',
+          icon: 'success',
+          title: 'CONGRATULATIONS! You have now successfully registered! ',
+          showConfirmButton: false,
+          timer: 1500
+        })
         //update user
-        updateProfile(result.user),{
+        updateProfile(result.user,{
           displayName:name,
           photoURL: photo,
-        }
+        })
         e.target.reset();
         navigate("/")
       })
       .catch(error =>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'The email address is already in use. Please use a different email address',
+        })
         console.error(error);
       })
     }
@@ -56,7 +74,7 @@ const Register = () => {
           {
             success && <p> {success} </p>
           }
-                   <div className=" min-h-screen bg-base-200">
+<div className=" min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
     <h1 className="text-3xl font-bold text-center pt-4 px-3">Register now!</h1>

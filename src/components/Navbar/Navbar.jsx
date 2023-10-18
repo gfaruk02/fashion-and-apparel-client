@@ -1,8 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext);
 
+  const handleSignOut =()=>{
+    logOut()
+      .then(()=> console.log('User Logged Out Successfully'))
+      .catch(error=> console.error(error))
+  }
     const NavLinks = <>
         <li className=" font-semibold text-base text-green-600"> 
             <NavLink
@@ -47,7 +55,7 @@ const Navbar = () => {
                 Register
             </NavLink>
         </li>
-        <li className=" font-semibold text-base text-green-600"> 
+        {/* <li className=" font-semibold text-base text-green-600"> 
             <NavLink
                 to="/login"
                 style={({ isActive, isPending, isTransitioning }) => {
@@ -60,7 +68,7 @@ const Navbar = () => {
             >
                Sign in
             </NavLink>
-        </li>
+        </li> */}
     </>
 
     return (
@@ -106,30 +114,31 @@ const Navbar = () => {
       </div>
       </div>
       </div>
-{/* {
-    user ? <> */}
+{
+    user ? <>
       <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img src={'https://i.ibb.co/2KsNnpN/pngtree-cartoon-color-simple-male-avatar-png-image-1934459.jpg'} />
+          <img src={user.photoURL} />
         </div>
       </label>
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
         <li>
           <a className="justify-between">
-            Name : 
+            Name : {user.displayName}
           </a>
         </li>
-        <li><a>Email: </a></li>
-        <li><a>Sign Out</a></li>
+        <li><a>Email: {user.email} </a></li>
+        <li> <button onClick={handleSignOut}>Sign Out</button></li>
       </ul>
     </div>
-    {/* </> : */}
-    {/* <Link to='/login'>
+    </> 
+    : 
+    <Link to='/login'>
     <button className=" bg-rose-700 rounded-lg hover:bg-rose-400 text-white font-semibold py-1 px-2 md:py-2 md:px-4 text-sm md:text-base">Login</button>
-</Link> */}
-{/* } */}
+  </Link>
 
+}
 
 </div>
 </div>

@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from 'sweetalert2';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const Login = () => {
+
+  const {signInUser, googleSignIn} = useContext(AuthContext);
+  const location = useLocation();
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = e =>{
     e.preventDefault();
@@ -9,6 +18,38 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email,password);
+    signInUser(email, password)
+    .then(Result=>{
+      console.log(Result.user);
+      e.target.reset();
+      navigate(location?.state?location.state : "/");
+    })
+    .catch(error=>{
+      console.error(error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'You Email or Password is incorrect. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
+    })
+
+  }
+  const handleGoogleLogIn = () =>{
+    googleSignIn()
+    .then(Result=>{
+      console.log(Result.user);
+      navigate(location?.state?location.state : "/");
+    })
+    .catch(error=>{
+      console.error(error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'You Email is incorrect. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
+    })
   }
     return (
         <div>
@@ -27,7 +68,14 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+          <div className="flex items-center relative ">
+          <input name="password" type={showPassword? "text" :"password"} placeholder="password" className=" w-full input input-bordered" required />
+          <span className=" absolute right-2" onClick={()=>setShowPassword(!showPassword)}>
+          {
+              showPassword ? <FaEyeSlash className=" text-rose-400 text-lg"></FaEyeSlash> : <FaEye className=" text-rose-400 text-lg"></FaEye>
+          }
+          </span>
+          </div>
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -37,7 +85,7 @@ const Login = () => {
         </div>
       </form>
       <div> 
-        <p className=" text-lg"> Login with Google</p>
+        <p className=" text-lg"> <button onClick={handleGoogleLogIn}>Login with Google</button></p>
       </div>
       <div>
         <p className="text-lg">Do not Have an Account? Please <Link to="/register">Register</Link> </p>
