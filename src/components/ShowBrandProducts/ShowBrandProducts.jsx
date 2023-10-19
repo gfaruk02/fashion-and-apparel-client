@@ -4,9 +4,9 @@ import Brandproduct from "./Brandproduct";
 
 const ShowBrandProducts = () => {
     const products = useLoaderData();
-    // const {brand} =products
+
     const {brand} = useParams();
-    // console.log(products);
+    console.log('ShowBrandProducts', products);
     const brandproducts = products.filter(product=> product.brand === brand);
     // if{products.brand === brand}
     // const product = products?.filter(product=> product.brand === brand)?.map(item=> console.log(item.name));

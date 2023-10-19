@@ -18,9 +18,9 @@ const Details = () => {
         <div>
             <div className=" mt-10 w-full lg:w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-9"> 
                 <div > 
-                <img className="h-[80vh] w-full" src={product.photo} alt="" />
+                <img className=" w-full" src={product.photo} alt="" />
                 </div>
-                <div className=""> 
+                <div className="text-center md:text-left mt-16"> 
                 <h1 className="md-5 text-2xl font-bold "> {product.name}</h1>
                 <p className="pb-3"><span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Brand:</span>   {product.brand}</p>
                 <p className="pb-3"><span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Type: </span>  {product.type}</p>
@@ -28,7 +28,7 @@ const Details = () => {
                 {/* <p> Type: {product.type}</p> */}
                 <p className="pb-3"><span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Rating:</span>  {product.rating}</p>
                 <p className="pb-3"> <span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Price:</span>  $ {product.price}</p>
-                <div className="pb-3"> <span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Description:</span> 
+                <div className="p-3"> <span className=" md:p-0 text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Description:</span> 
                  {product.description}
                 </div>
                 <div className="mt-5">
@@ -37,6 +37,11 @@ const Details = () => {
                 </div>
               <span className="block text-lg antialiased font-medium leading-relaxed text-blue-gray-900"></span>  
             </div>
+            {/* <div> 
+                <marquee> 
+
+                </marquee>
+            </div> */}
         </div>
         
     );

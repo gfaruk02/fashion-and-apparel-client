@@ -44,7 +44,7 @@ const Addproduct = () => {
 
     return (
         <div className="mx-auto w-3/4 pt-10 rounded-lg bg-blue-300">
-            <h1> Add New Product</h1>
+            <h1 className='text-center text-3xl'> Add New Product</h1>
             <form onSubmit={handleAddProduct} className="w-1/2 mx-auto">
 
             <div className="flex gap-10 justify-center py-5">
@@ -92,6 +92,7 @@ const Addproduct = () => {
                     <option value="boot">Boot</option>
                     <option value="sportswear">Sportswear</option>
                     <option value="jacket">Jacket</option>
+                    <option value="watch">Watch</option>
                     </select>
                 </div>
                 <div className="form-control w-full">
