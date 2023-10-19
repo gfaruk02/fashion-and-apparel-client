@@ -11,10 +11,11 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Addproduct from './components/Addproduct/Addproduct';
-import MyCard from './components/MyCard/MyCard';
 import AuthProvider from './components/Provider/AuthProvider';
 import ShowBrandProducts from './components/ShowBrandProducts/ShowBrandProducts';
 import Details from './components/ShowBrandProducts/Details';
+import UpdateProduct from './components/UpdateProduct/UpdateProduct';
+import MyCarts from './components/MyCart/MyCarts';
 // import PropularProduct from './components/PropularProduct/PropularProduct';
 
 
@@ -28,8 +29,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader:
-          () => fetch('http://localhost:5000/brand'),
+        loader:() => fetch('http://localhost:5000/brand'),
 
       },
       {
@@ -54,14 +54,19 @@ const router = createBrowserRouter([
         element: <Details></Details>,
         loader: ()=> fetch('http://localhost:5000/product')
       },
+      {
+        path:"/updateproduct/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+      },
       // {
       //   path:"/popularproduct",
       //   element: <PropularProduct></PropularProduct>,
       //   loader: ()=> fetch('http://localhost:5000/product')
       // },
       {
-        path: "/mycard",
-        element: <MyCard></MyCard>
+        path: "/mycart",
+        element: <MyCarts></MyCarts>
       }
     ]
   },

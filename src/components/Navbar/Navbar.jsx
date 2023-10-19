@@ -43,6 +43,20 @@ const Navbar = () => {
         </li>
         <li className=" font-semibold text-base text-green-600"> 
             <NavLink
+                to="/mycart"
+                style={({ isActive, isPending, isTransitioning }) => {
+                    return {
+                    fontWeight: isActive ? "bold" : "",
+                    color: isPending ? "white" : "green",
+                    viewTransitionName: isTransitioning ? "slide" : "",
+                    };
+                }}
+            >
+               My Cart
+            </NavLink>
+        </li>
+        <li className=" font-semibold text-base text-green-600"> 
+            <NavLink
                 to="/register"
                 style={({ isActive, isPending, isTransitioning }) => {
                     return {

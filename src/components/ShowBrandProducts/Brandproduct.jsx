@@ -7,7 +7,7 @@ const Brandproduct = ({brandItem}) => {
 
     return (
         <div>
-            {/* <div classNameName="card w-48 bg-base-100 shadow-xl">
+     {/* <div classNameName="card w-48 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={photo} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -50,15 +50,23 @@ const Brandproduct = ({brandItem}) => {
 }
     </p>
   </div>
-  <div className="p-6 pt-0">
+  <div className="p-6 pt-0 grid grid-cols-1 md:grid-cols-2 gap-6">
     <Link to={`/details/${_id}`}>
     <button
-      className="block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      className=" btn btn-primary w-full"
       type="button"
     >
       Details
     </button>
     
+    </Link>
+    <Link to={`/updateproduct/${_id}`}>
+    <button
+      className=" btn btn-primary"
+      type="button"
+    >
+      Update
+    </button>
     </Link>
   </div>
 </div>
