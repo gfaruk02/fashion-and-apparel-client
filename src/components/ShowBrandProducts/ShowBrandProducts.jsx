@@ -14,7 +14,7 @@ const ShowBrandProducts = () => {
     return (
         <div>
             <h1>Product show page</h1>
-            <div className=" mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-between gap-2">
+            <div className=" mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-2">
             {brandproducts.map(brandItem=> <Brandproduct key={brandItem._id} brandItem={brandItem}></Brandproduct> )}
             </div>
             

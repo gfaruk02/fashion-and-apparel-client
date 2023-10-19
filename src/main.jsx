@@ -14,6 +14,7 @@ import Addproduct from './components/Addproduct/Addproduct';
 import MyCard from './components/MyCard/MyCard';
 import AuthProvider from './components/Provider/AuthProvider';
 import ShowBrandProducts from './components/ShowBrandProducts/ShowBrandProducts';
+import Details from './components/ShowBrandProducts/Details';
 
 
 
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
       {
         path:"/brandproduct/:brand",
         element: <ShowBrandProducts></ShowBrandProducts>,
+        loader: ()=> fetch('http://localhost:5000/product')
+      },
+      {
+        path:"/details/:_id",
+        element: <Details></Details>,
         loader: ()=> fetch('http://localhost:5000/product')
       },
       {
