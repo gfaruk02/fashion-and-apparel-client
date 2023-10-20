@@ -1,9 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
     const loadProduct = useLoaderData();
+   const navigate = useNavigate()
     const { _id, name, brand, type, price, category, description, rating, photo } = loadProduct;
 
     const handleUpdateProduct = event => {
@@ -21,7 +22,7 @@ const UpdateProduct = () => {
         // console.log(name,brand,type,price,description,rating,photo);
         console.log(product);
 
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/product/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -38,22 +39,23 @@ const UpdateProduct = () => {
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     })
+                    navigate(`/brandproduct/${brand}`)
                 }
                 form.reset();
             })
     }
     return (
-        <div className="mx-auto w-full md:w-3/4 pt-10 rounded-lg bg-green-200">
+        <div className="mx-auto w-full md:w-3/4 mt-8 pt-4 rounded-lg bg-green-200">
             <h1 className='text-center text-3xl text-green-700 font-bold'> Update Product</h1>
-            <form onSubmit={handleUpdateProduct} className="w-1/2 mx-auto">
+            <form onSubmit={handleUpdateProduct} className="w-3/4 mx-auto pt-8">
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-5">
-                    <div className="form-control w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 justify-center">
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Product Name</span>
                         </label>
                         <label className="input-group">
-                            <input defaultValue={name} type="text" name="name" placeholder=" Name" className="input input-bordered" />
+                            <input defaultValue={name} type="text" name="name" placeholder=" Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control w-full">
@@ -62,34 +64,34 @@ const UpdateProduct = () => {
                         </label>
                         <select defaultValue={brand} className="select select-bordered" id="brand" name="brand">
                             <option disabled selected>Select Brand Name</option>
-                            <option value="nike">Nike</option>
-                            <option value="adidas">Adidas</option>
-                            <option value="gucci">Gucci</option>
-                            <option value="zara">Zara</option>
-                            <option value="h&m">H&M</option>
-                            <option value="levis">Levi's</option>
+                            <option value="Nike">Nike</option>
+                            <option value="Adidas">Adidas</option>
+                            <option value="Gucci">Gucci</option>
+                            <option value="Zara">Zara</option>
+                            <option value="H&M">H&M</option>
+                            <option value="Levi's">Levi's</option>
                         </select>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 justify-center">
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Product Type</span>
                         </label>
                         <select className="select select-bordered" id="type" name="type" defaultValue={type}>
                             <option disabled selected>Select Product Type</option>
-                            <option value="dresses">Dresses</option>
-                            <option value="shoes">Shoes</option>
-                            <option value="suit">Suit</option>
-                            <option value="shirt">Shirt</option>
-                            <option value="skirt">Skirt</option>
-                            <option value="uniform">Uniform</option>
-                            <option value="beg">Beg</option>
-                            <option value="boot">Boot</option>
-                            <option value="sportswear">Sportswear</option>
-                            <option value="jacket">Jacket</option>
-                            <option value="watch">Watch</option>
+                            <option value="Dresses">Dresses</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Suit">Suit</option>
+                            <option value="Shirt">Shirt</option>
+                            <option value="Skirt">Skirt</option>
+                            <option value="Uniform">Uniform</option>
+                            <option value="Beg">Beg</option>
+                            <option value="Boot">Boot</option>
+                            <option value="Sportswear">Sportswear</option>
+                            <option value="Jacket">Jacket</option>
+                            <option value="Watch">Watch</option>
                         </select>
                     </div>
                     <div className="form-control w-full">
@@ -106,8 +108,8 @@ const UpdateProduct = () => {
                         </select>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-5">
-                    <div className="form-control w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 justify-center">
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Short description</span>
                         </label>
@@ -115,22 +117,22 @@ const UpdateProduct = () => {
                             <input defaultValue={description} type="text" name="description" placeholder="Short description" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control w-full">
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">price</span>
                         </label>
-                        <label className="input-group w-full">
+                        <label className="input-group">
                             <input defaultValue={price} type="number" name="price" placeholder="price " className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
-                <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-5">
-                    <div className="form-control w-full">
+                <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 justify-center">
+                    <div className="form-control ">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Rating</span>
                         </label>
                         <label className="input-group">
-                            <input defaultValue={rating} type="number" name="rating" placeholder="Rating max 5 " className="input input-bordered" />
+                            <input defaultValue={rating} type="number" name="rating" placeholder="Rating max 5 " className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control w-full">
@@ -142,7 +144,7 @@ const UpdateProduct = () => {
                         </label>
                     </div>
                 </div>
-                <input className="btn btn-block mb-10 bg-green-700  text-white hover:bg-green-500" type="submit" value="Update Product" />
+                <input className="btn btn-block my-10 bg-green-700  text-white hover:bg-green-500" type="submit" value="Update Product" />
 
             </form>
         </div>

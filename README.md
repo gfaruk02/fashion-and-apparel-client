@@ -1,4 +1,4 @@
-# Assignment live link : 
+# Assignment live link : https://assignment-10-fashion-client.web.app
 
 I try to Creating an effective and user-friendly project for my website is important to attract the attention of potential user. Here are the key elements and details to include on homepage:
 

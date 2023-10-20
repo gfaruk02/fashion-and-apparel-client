@@ -1,20 +1,22 @@
 // import { useContext, useEffect, useState } from "react";
 // import { AuthContext } from "../Provider/AuthProvider";
-import { useEffect, useState } from "react";
+
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const MyCarts = () => {
-    // const {user} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
     const [myCart, setMyCart] = useState();
     useEffect(()=>{
-        fetch('http://localhost:5000/myCard?email=shadiasultana02@gmail.com')
+        fetch(`https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/myCard?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             // console.log(data);
             setMyCart(data);
         })
-    },[])
+    },[user])
     // console.log(myCart);
     const handleDelete = (_id) =>{
         console.log(_id);
@@ -30,7 +32,7 @@ const MyCarts = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/card/${_id}`, {
+                fetch(`https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/card/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

@@ -28,7 +28,7 @@ const Details = () => {
         const newCard = { productId: _id, name, photo, brand, price, email: user.email }
         console.log(newCard);
         if (user) {
-            fetch('http://localhost:5000/card', {
+            fetch('https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/card', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
@@ -45,35 +45,14 @@ const Details = () => {
                             icon: 'success',
                             confirmButtonText: 'Cool'
                         })
-
+                        
                     }
-
+                   
                 })
         }
         else {
             navigate('/login')
         }
-        // fetch('http://localhost:5000/card',{
-        //     method: "POST",
-        //     headers:{
-        //         "content-type" : "application/json"
-        //     },
-        //     body: JSON.stringify(product)
-        // })
-        // .then(res=>res.json())
-        // .then(data=>{
-        //     console.log(data);
-        //     if(data.insertedId){
-        //         Swal.fire({
-        //             title: 'Successfully!',
-        //             text: 'Data Added in Successfully',
-        //             icon: 'success',
-        //             confirmButtonText: 'Cool'
-        //           })
-
-        //     }
-
-        // })
     }
     return (
         <div>
