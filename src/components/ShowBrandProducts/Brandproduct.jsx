@@ -62,7 +62,7 @@ const Brandproduct = ({brandItem}) => {
     </Link>
     <Link to={`/updateproduct/${_id}`}>
     <button
-      className=" btn btn-primary"
+      className=" btn btn-primary w-full"
       type="button"
     >
       Update

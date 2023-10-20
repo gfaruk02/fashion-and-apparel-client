@@ -43,17 +43,17 @@ const Addproduct = () => {
     }
 
     return (
-        <div className="mx-auto w-3/4 pt-10 rounded-lg bg-blue-300">
+        <div className="mx-auto w-full md:w-3/4 pt-10 rounded-lg bg-blue-300">
             <h1 className='text-center text-3xl'> Add New Product</h1>
             <form onSubmit={handleAddProduct} className="w-1/2 mx-auto">
 
-            <div className="flex gap-10 justify-center py-5">
+            <div className="gird grid-cols-1 lg:grid-cols-2  gap-10 justify-center py-5">
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text text-xl font-semibold">Product Name</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="name" placeholder=" Name" className="input input-bordered" />
+                        <input type="text" name="name" placeholder=" Name" className="input input-bordered w-full" />
                     </label>
                 </div>
                 <div className="form-control w-full">
@@ -72,7 +72,7 @@ const Addproduct = () => {
                 </div>
             </div>
             
-            <div className="flex gap-10 justify-center py-5">
+            <div className="gird grid-cols-1 lg:grid-cols-2 gap-10 justify-center py-5">
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text text-xl font-semibold">Product Type</span>
@@ -109,13 +109,13 @@ const Addproduct = () => {
                     </select>
                 </div>
             </div>
-            <div className="flex gap-10 justify-center py-5">
+            <div className="gird grid-cols-1 lg:grid-cols-2 gap-10 justify-center py-5">
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text text-xl font-semibold">Short description</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="description" placeholder="Short description" className="input input-bordered" />
+                        <input type="text" name="description" placeholder="Short description" className="input input-bordered w-full" />
                     </label>
                 </div>
                 <div className="form-control w-full">
@@ -123,17 +123,17 @@ const Addproduct = () => {
                         <span className="label-text text-xl font-semibold">price</span>
                     </label>
                     <label className="input-group">
-                        <input type="number" name="price" placeholder="price " className="input input-bordered" />
+                        <input type="number" name="price" placeholder="price " className="input input-bordered w-full" />
                     </label>
                 </div>
             </div>
-            <div className=" flex gap-10 justify-center py-5"> 
+            <div className=" gird grid-cols-1 lg:grid-cols-2 gap-10 justify-center py-5"> 
             <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text text-xl font-semibold">Rating</span>
                     </label>
                     <label className="input-group">
-                        <input type="number" name="rating" placeholder="Rating max 5 " className="input input-bordered" />
+                        <input type="number" name="rating" placeholder="Rating max 5 " className="input input-bordered w-full" />
                     </label>
                 </div>
             <div className="form-control w-full">

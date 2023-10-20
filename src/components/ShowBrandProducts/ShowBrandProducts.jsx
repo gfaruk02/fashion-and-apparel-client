@@ -15,28 +15,28 @@ const ShowBrandProducts = () => {
         <div>
           <div className="carousel w-full h-[90vh]">
   <div id="slide1" className="carousel-item relative w-full">
-    <img src={'https://i.ibb.co/T2SRYzD/zara4.jpg'} className="w-full" />
+    <img src={'https://i.ibb.co/qr5PMJj/hm2.jpg'} className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide4" className="btn btn-circle">❮</a> 
       <a href="#slide2" className="btn btn-circle">❯</a>
     </div>
   </div> 
   <div id="slide2" className="carousel-item relative w-full">
-    <img src={'https://i.ibb.co/rGMZk2n/zara2.jpg'} className="w-full" />
+    <img src={'https://i.ibb.co/rmgrFbm/up-adidas-1.jpg'} className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide1" className="btn btn-circle">❮</a> 
       <a href="#slide3" className="btn btn-circle">❯</a>
     </div>
   </div> 
   <div id="slide3" className="carousel-item relative w-full">
-    <img src={'https://i.ibb.co/7ND6zj7/nk2.jpg'} className="w-full" />
+    <img src={'https://i.ibb.co/F4HzTBn/hm3.jpg'} className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide2" className="btn btn-circle">❮</a> 
       <a href="#slide4" className="btn btn-circle">❯</a>
     </div>
   </div> 
   <div id="slide4" className="carousel-item relative w-full">
-    <img src={'https://i.ibb.co/Xx7zb4b/adidas-sportswear-lite-racer-rebold-trainers.jpg'} className="w-full" />
+    <img src={'https://i.ibb.co/nbRPyS3/IMG-8850.jpg'} className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide3" className="btn btn-circle">❮</a> 
       <a href="#slide1" className="btn btn-circle">❯</a>
