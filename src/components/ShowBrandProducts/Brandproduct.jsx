@@ -7,16 +7,6 @@ const Brandproduct = ({brandItem}) => {
 
     return (
         <div>
-     {/* <div classNameName="card w-48 bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10">
-                <img src={photo} alt="Shoes" className="rounded-xl" />
-            </figure>
-            <div className="card-body items-center text-center">
-                <h2 className="card-title">{name}</h2>
-            </div>
-            </div>  */}
-
-
 <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
   <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
     <img
@@ -24,8 +14,8 @@ const Brandproduct = ({brandItem}) => {
       className="object-cover w-full h-full"
     />
   </div>
-  <div className="p-6">
-    <h1> {name} </h1>
+  <div className="p-6 ">
+    <h1 className='text-green-700 font-bold text-xl'> {name} </h1>
     <div className="flex items-center justify-between mb-2">
       <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
        Brand: {brand}
@@ -53,7 +43,7 @@ const Brandproduct = ({brandItem}) => {
   <div className="p-6 pt-0 grid grid-cols-1 md:grid-cols-2 gap-6">
     <Link to={`/details/${_id}`}>
     <button
-      className=" btn btn-primary w-full"
+      className=" btn btn-primary  bg-green-700 hover:bg-green-500 text-white w-full"
       type="button"
     >
       Details
@@ -62,7 +52,7 @@ const Brandproduct = ({brandItem}) => {
     </Link>
     <Link to={`/updateproduct/${_id}`}>
     <button
-      className=" btn btn-primary w-full"
+      className=" btn btn-primary  bg-green-700 hover:bg-green-500 text-white w-full"
       type="button"
     >
       Update

@@ -43,11 +43,11 @@ const UpdateProduct = () => {
             })
     }
     return (
-        <div className="mx-auto w-3/4 pt-10 rounded-lg bg-blue-300">
-            <h1 className='text-center text-3xl'> Add New Product</h1>
+        <div className="mx-auto w-full md:w-3/4 pt-10 rounded-lg bg-green-200">
+            <h1 className='text-center text-3xl text-green-700 font-bold'> Update Product</h1>
             <form onSubmit={handleUpdateProduct} className="w-1/2 mx-auto">
 
-                <div className="flex gap-10 justify-center py-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-5">
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Product Name</span>
@@ -72,14 +72,11 @@ const UpdateProduct = () => {
                     </div>
                 </div>
 
-                <div className="flex gap-10 justify-center py-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-5">
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Product Type</span>
                         </label>
-                        {/* <label className="input-group">
-                    <input type="text" name="type" placeholder="man, woman, kids" className="input input-bordered" />
-                </label> */}
                         <select className="select select-bordered" id="type" name="type" defaultValue={type}>
                             <option disabled selected>Select Product Type</option>
                             <option value="dresses">Dresses</option>
@@ -109,25 +106,25 @@ const UpdateProduct = () => {
                         </select>
                     </div>
                 </div>
-                <div className="flex gap-10 justify-center py-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-5">
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Short description</span>
                         </label>
-                        <label className="input-group">
-                            <input defaultValue={description} type="text" name="description" placeholder="Short description" className="input input-bordered" />
+                        <label className="input-group ">
+                            <input defaultValue={description} type="text" name="description" placeholder="Short description" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">price</span>
                         </label>
-                        <label className="input-group">
-                            <input defaultValue={price} type="number" name="price" placeholder="price " className="input input-bordered" />
+                        <label className="input-group w-full">
+                            <input defaultValue={price} type="number" name="price" placeholder="price " className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
-                <div className=" flex gap-10 justify-center py-5">
+                <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-5">
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Rating</span>
@@ -145,7 +142,7 @@ const UpdateProduct = () => {
                         </label>
                     </div>
                 </div>
-                <input className="btn btn-block mb-10 bg-rose-500 text-white hover:bg-rose-400" type="submit" value="Add Product" />
+                <input className="btn btn-block mb-10 bg-green-700  text-white hover:bg-green-500" type="submit" value="Update Product" />
 
             </form>
         </div>

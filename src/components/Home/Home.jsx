@@ -1,9 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
-// import { useState } from "react";
 import Brand from "../Brand/Brand";
-// import PropularProduct from "../PropularProduct/PropularProduct";
-
 
 const Home = () => {
     const loadedBrand = useLoaderData()
@@ -12,7 +9,7 @@ const Home = () => {
             <Banner></Banner>
             <div className=" text-center  my-10">
                 
-            <h1 className="text-4xl font-bold">Most Popular Brand </h1>
+            <h1 className="text-4xl font-bold text-green-700">Most Popular Brand </h1>
             <div className=" mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-between gap-2"> 
                 {
                     loadedBrand?.map(brands => <Brand key={brands._id} brands={brands}>
@@ -21,15 +18,15 @@ const Home = () => {
             </div>
             </div>
 <div className="w-full my-8 md:my-16">
-                <h1 className="text-4xl font-bold text-center pb-10"> Women's Fashion Collection</h1>
+                <h1 className="text-4xl font-bold text-green-700 text-center pb-10"> Women's Fashion Collection</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-<div className="card w-full bg-base-100 shadow-xl md:col-span-2">
+<div className="card w-full bg-green-50 shadow-xl md:col-span-2">
   <figure><img className="w-full h-full" src={'https://i.ibb.co/Z8qkrsJ/ao-phong-nu-adidas-trefoil-cv9888-mau-den-size-l-61a5a819ed03b-30112021112705.jpg'} alt="Shoes" /></figure>
 </div>
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
   <figure><img className="md:h-64 w-full" src={'https://i.ibb.co/d29JNSY/nk.jpg'} alt="Shoes" /></figure>
   <div className="card-body px-1 py-5">
     <h2 className="text-center">
@@ -39,7 +36,7 @@ const Home = () => {
 </div>
  <br />
 
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
   <figure><img className="md:h-64 w-full"  src={'https://i.ibb.co/7ND6zj7/nk2.jpg'} alt="Shoes" /></figure>
   <div className="card-body px-1 py-5">
     <h2 className="text-center">
@@ -49,7 +46,7 @@ const Home = () => {
 </div>
 </div>
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
   <figure><img className="md:h-64 w-full" src={'https://i.ibb.co/9s4hJFR/gu3.jpg'} alt="Shoes" /></figure>
   <div className="card-body px-1 py-5">
     <h2 className="text-center">
@@ -59,13 +56,13 @@ const Home = () => {
 </div>
  <br />
 
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
   <figure><img className="md:h-64 w-full"  src={'https://i.ibb.co/0MHdQJd/http-static-theiconic-com-au-p-adidas-performance-4411-4174991-1.jpg'} alt="Shoes" /></figure>
 <div className="card-body px-1 py-5">
     <h2 className="text-center">
     Quickburn Training Tank Top!
     
-      <div className="badge badge-secondary">NEW</div>
+      <div className="badge badge-secondary ml-2 bg-green-700 text-white border-green-950 ">NEW</div>
     </h2>
   </div>
 </div>
@@ -75,48 +72,48 @@ const Home = () => {
                 {/* <PropularProduct></PropularProduct> */}
 
 <div className="w-full my-8 md:my-16">
-<h1 className="text-4xl font-bold text-center pb-10"> New Arrival</h1>
+<h1 className="text-4xl font-bold text-green-700 text-center pb-10"> New Arrival</h1>
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
-  <figure><img className="md:h-64 w-full" src={'https://i.ibb.co/d29JNSY/nk.jpg'} alt="Shoes" /></figure>
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
+  <figure><img className="md:h-64 w-full" src={'https://i.ibb.co/KD13Rhb/zara3.jpg'} alt="Shoes" /></figure>
   <div className="card-body px-1 py-5">
     <h2 className="text-center">
-    NIKE HOOPS ELITE BACKPACK!
-      <div className="badge badge-secondary">NEW</div>
+    SHORT PRINTED DRESS
+      <div className="badge badge-secondary ml-2 bg-green-700 text-white border-green-950 ">NEW</div>
     </h2>
   </div>
 </div>
 
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
-  <figure><img className="md:h-64 w-full"  src={'https://i.ibb.co/7ND6zj7/nk2.jpg'} alt="Shoes" /></figure>
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
+  <figure><img className="md:h-64 w-full"  src={'https://i.ibb.co/KVQynfh/li2.jpg'} alt="Shoes" /></figure>
   <div className="card-body px-1 py-5">
     <h2 className="text-center">
-  Sportswear Phoenix Fleece!
-      <div className="badge badge-secondary">NEW</div>
-    </h2>
-  </div>
-</div>
-
-
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
-  <figure><img className="md:h-64 w-full" src={'https://i.ibb.co/9s4hJFR/gu3.jpg'} alt="Shoes" /></figure>
-  <div className="card-body px-1 py-5">
-    <h2 className="text-center">
-    Thong Sandal With Horsebit!
-      <div className="badge badge-secondary">NEW</div>
+    LEVI'S BODYSUIT BABY
+      <div className="badge badge-secondary ml-2 bg-green-700 text-white border-green-950 ">NEW</div>
     </h2>
   </div>
 </div>
 
 
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
-  <figure><img className="md:h-64 w-full"  src={'https://i.ibb.co/0MHdQJd/http-static-theiconic-com-au-p-adidas-performance-4411-4174991-1.jpg'} alt="Shoes" /></figure>
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
+  <figure><img className="md:h-64 w-full" src={'https://i.ibb.co/8bdpJNs/li5.jpg'} alt="Shoes" /></figure>
+  <div className="card-body px-1 py-5">
+    <h2 className="text-center">
+    ATHLETIC TAPER FIT JEANS
+      <div className="badge badge-secondary ml-2 bg-green-700 text-white border-green-950 ">NEW</div>
+    </h2>
+  </div>
+</div>
+
+
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
+  <figure><img className="md:h-64 w-full"  src={'https://i.ibb.co/wcZKbGy/hm4.jpg'} alt="Shoes" /></figure>
 <div className="card-body px-1 py-5">
     <h2 className="text-center">
-    Quickburn Training Tank Top!
+    Square-neck bodycon dress
     
-      <div className="badge badge-secondary">NEW</div>
+      <div className="badge badge-secondary ml-2 bg-green-700 text-white border-green-950 ">NEW</div>
     </h2>
   </div>
 
@@ -125,15 +122,15 @@ const Home = () => {
                 </div> 
                 {/* end new araibel */}
                 <div className="w-full my-8 md:my-16">
-                <h1 className="text-4xl font-bold text-center pb-10"> Men's Fashion Collection</h1>
+                <h1 className="text-4xl font-bold text-green-700 text-center pb-10"> Men's Fashion Collection</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-<div className="card w-full bg-base-100 shadow-xl md:col-span-2">
+<div className="card w-full bg-green-50 shadow-xl md:col-span-2">
   <figure><img className="w-full" src={'https://i.ibb.co/yFgW8Rb/nike1.jpg'} alt="Shoes" /></figure>
 </div>
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
   <figure><img className="md:h-64 w-full" src={'https://i.ibb.co/Rpg3nLr/71-PJNu-RJo1-L-AC-UY1000.jpg'} alt="Shoes" /></figure>
   <div className="card-body px-1 py-5">
     <h2 className="text-center">
@@ -143,7 +140,7 @@ const Home = () => {
 </div>
  <br />
 
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
   <figure><img className="md:h-64 w-full"  src={'https://i.ibb.co/fSQdgSD/nk3.jpg'} alt="Shoes" /></figure>
   <div className="card-body px-1 py-5">
     <h2 className="text-center">
@@ -153,7 +150,7 @@ const Home = () => {
 </div>
 </div>
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
   <figure><img className="md:h-64 w-full" src={'https://i.ibb.co/M5zpXpM/gc2.jpg'} alt="Shoes" /></figure>
   <div className="card-body px-1 py-5">
     <h2 className="text-center">
@@ -163,7 +160,7 @@ const Home = () => {
 </div>
  <br />
 
-<div className="card w-full md:w-80 lg:w-72 bg-base-100 shadow-xl">
+<div className="card w-full md:w-80 lg:w-72 bg-green-50 shadow-xl">
   <figure><img className="md:h-64 w-full"  src={'https://i.ibb.co/hfsHzFx/gu4.jpg'} alt="Shoes" /></figure>
 <div className="card-body px-1 py-5">
     <h2 className="text-center">

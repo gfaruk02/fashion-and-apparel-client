@@ -46,22 +46,16 @@ const MyCarts = () => {
                             setMyCart(remaining);
                         }
                     })
-                //   Swal.fire(
-                //     'Deleted!',
-                //     'Your file has been deleted.',
-                //     'success'
-                //   )
             }
         })
-        //end sweet alert
 }
     return (
         <div className="my-20">
             <div className="overflow-x-auto ">
-  <table className="table w-9/12 mx-auto">
+  <table className="table w-full md:w-9/12 mx-auto p-0 m-0">
     {/* head */}
     <thead>
-      <tr className="text-xl font-semibold">
+      <tr className="text-xs md:text-xl font-semibold text-green-700 ">
         <th>SL.</th>
         <th>Image</th>
         <th>Name</th>
@@ -72,18 +66,18 @@ const MyCarts = () => {
     </thead>
     <tbody>
       {
-        myCart?.map((cart, index)=> <tr key={index} className="hover" >
+        myCart?.map((cart, index)=> <tr key={index} className="hover:bg-green-300 text-xs md:text-xl" >
             
         <td>{index+1} </td>
         <td>
-            <img className="w-20 h-16 rounded-lg" src={cart.photo}  />
+            <img className="w-14 h-10 md:w-20 md:h-16 rounded-lg" src={cart.photo}  />
         </td>
         
         <td>{cart.name}</td>
         <td>{cart.brand}</td>
         <td>${cart.price}.00</td>
         <td>
-            <button onClick={()=>handleDelete(cart._id)} className="hover:bg-orange-400 p-5 rounded-lg"> 
+            <button onClick={()=>handleDelete(cart._id)} className="hover:bg-red-400 hover:text-white  p-5 rounded-lg text-red-500 font-bold"> 
                 X
             </button>
         </td>

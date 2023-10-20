@@ -77,7 +77,7 @@ const Register = () => {
 <div className=" min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-    <h1 className="text-3xl font-bold text-center pt-4 px-3">Register now!</h1>
+    <h1 className="text-3xl font-bold text-center pt-4 px-3 text-green-700">Register now!</h1>
       <form onSubmit={handleRegister} className="card-body pt-2">
         <div className="form-control">
           <label className="label">
@@ -105,18 +105,18 @@ const Register = () => {
           <input name="password" type={showPassword? "text":"password"} placeholder="password" className="input input-bordered w-full" required />
           <span className=" absolute right-2" onClick={()=>setShowPassword(!showPassword)}>
           {
-              showPassword ? <FaEyeSlash className=" text-rose-400 text-lg"></FaEyeSlash> : <FaEye className=" text-rose-400 text-lg"></FaEye>
+              showPassword ? <FaEyeSlash className=" text-green-400 text-lg"></FaEyeSlash> : <FaEye className=" text-green-700 text-lg"></FaEye>
           }
           </span>
         </div>
         </div>
         <div className="form-control mt-4 ">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn btn-primary bg-green-700 hover:bg-green-500 text-white">Register</button>
         </div>
       </form>
 
       <div className="md:p-2">
-        <p className="text-lg">Already! Have an Account? Please <Link to="/login">Sign In</Link> </p>
+        <p className="text-lg pl-3 pb-5">Already! Have an Account? Please <Link className="text-green-700 font-bold" to="/login">Sign In</Link> </p>
       </div>
     </div>
   </div>

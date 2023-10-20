@@ -81,8 +81,8 @@ const Details = () => {
                 <div >
                     <img className=" w-full" src={product.photo} alt="" />
                 </div>
-                <div className="text-center md:text-left mt-16">
-                    <h1 className="md-5 text-2xl font-bold "> {product.name}</h1>
+                <div className="text-center md:text-left">
+                    <h1 className=" pb-10 text-2xl font-bold text-green-700 "> {product.name}</h1>
                     <p className="pb-3"><span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Brand:</span>   {product.brand}</p>
                     <p className="pb-3"><span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Type: </span>  {product.type}</p>
                     <p className="pb-3"> <span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Category: </span> {product.category}</p>
@@ -93,7 +93,7 @@ const Details = () => {
                         {product.description}
                     </div>
                     <div className="mt-5">
-                        <button onClick={() => handleAddToCart(product)} className="bg-slate-400 w-full py-2 rounded-lg"> Add to Cart</button>
+                        <button onClick={() => handleAddToCart(product)} className=" w-full py-3 rounded-lg  bg-green-700 hover:bg-green-500 text-white text-xl"> Add to Cart</button>
                     </div>
                 </div>
                 <span className="block text-lg antialiased font-medium leading-relaxed text-blue-gray-900"></span>

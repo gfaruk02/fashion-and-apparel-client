@@ -43,14 +43,14 @@ const Addproduct = () => {
     }
 
     return (
-        <div className="mx-auto w-full md:w-3/4 pt-10 rounded-lg bg-blue-300">
-            <h1 className='text-center text-3xl'> Add New Product</h1>
+        <div className="mx-auto w-full md:w-3/4 pt-10 rounded-lg bg-green-200 font-bold">
+            <h1 className='text-center text-3xl text-green-700 '> Add New Product</h1>
             <form onSubmit={handleAddProduct} className="w-1/2 mx-auto">
 
             <div className="gird grid-cols-1 lg:grid-cols-2  gap-10 justify-center py-5">
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold">Product Name</span>
+                        <span className=" text-green-800 label-text text-xl font-semibold">Product Name</span>
                     </label>
                     <label className="input-group">
                         <input type="text" name="name" placeholder=" Name" className="input input-bordered w-full" />
@@ -58,9 +58,9 @@ const Addproduct = () => {
                 </div>
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold">Brand Name</span>
+                        <span className=" text-green-800 label-text text-xl font-semibold">Brand Name</span>
                     </label>
-<select className="select select-bordered" id="brand" name="brand">
+<select className="select select-bordered text-green-500 " id="brand" name="brand">
   <option disabled selected>Select Brand Name</option>
   <option value="nike">Nike</option>
   <option value="adidas">Adidas</option>
@@ -75,12 +75,9 @@ const Addproduct = () => {
             <div className="gird grid-cols-1 lg:grid-cols-2 gap-10 justify-center py-5">
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold">Product Type</span>
+                        <span className=" text-green-800 label-text text-xl font-semibold">Product Type</span>
                     </label>
-                    {/* <label className="input-group">
-                        <input type="text" name="type" placeholder="man, woman, kids" className="input input-bordered" />
-                    </label> */}
-                    <select className="select select-bordered" id="type" name="type">
+                    <select className="select select-bordered text-green-500" id="type" name="type">
                     <option disabled selected>Select Product Type</option>
                     <option value="dresses">Dresses</option>
                     <option value="shoes">Shoes</option>
@@ -97,9 +94,9 @@ const Addproduct = () => {
                 </div>
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold">Category</span>
+                        <span className=" text-green-800 label-text text-xl font-semibold">Category</span>
                     </label>
-                    <select className="select select-bordered" id="category" name="category">
+                    <select className="select select-bordered text-green-500" id="category" name="category">
                     <option disabled selected>Select Category</option>
                     <option value="women">women's fashion</option>
                     <option value="men">Men's fashion</option>
@@ -112,7 +109,7 @@ const Addproduct = () => {
             <div className="gird grid-cols-1 lg:grid-cols-2 gap-10 justify-center py-5">
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold">Short description</span>
+                        <span className=" text-green-800 label-text text-xl font-semibold">Short description</span>
                     </label>
                     <label className="input-group">
                         <input type="text" name="description" placeholder="Short description" className="input input-bordered w-full" />
@@ -120,7 +117,7 @@ const Addproduct = () => {
                 </div>
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold">price</span>
+                        <span className=" text-green-800 label-text text-xl font-semibold">price</span>
                     </label>
                     <label className="input-group">
                         <input type="number" name="price" placeholder="price " className="input input-bordered w-full" />
@@ -130,7 +127,7 @@ const Addproduct = () => {
             <div className=" gird grid-cols-1 lg:grid-cols-2 gap-10 justify-center py-5"> 
             <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold">Rating</span>
+                        <span className=" text-green-800 label-text text-xl font-semibold">Rating</span>
                     </label>
                     <label className="input-group">
                         <input type="number" name="rating" placeholder="Rating max 5 " className="input input-bordered w-full" />
@@ -138,14 +135,14 @@ const Addproduct = () => {
                 </div>
             <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold">Photo URL</span>
+                        <span className=" text-green-800 label-text text-xl font-semibold">Photo URL</span>
                     </label>
                     <label className="input-group">
                         <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
                     </label>
                 </div>
             </div>
-            <input className="btn btn-block mb-10 bg-rose-500 text-white hover:bg-rose-400" type="submit" value="Add Product" />
+            <input className="btn btn-block mb-10 bg-green-700 hover:bg-green-500 text-white" type="submit" value="Add Product" />
 
             </form>
         </div>
