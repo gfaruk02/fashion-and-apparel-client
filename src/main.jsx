@@ -17,6 +17,7 @@ import Details from './components/ShowBrandProducts/Details';
 import UpdateProduct from './components/UpdateProduct/UpdateProduct';
 import MyCarts from './components/MyCart/MyCarts';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import ContactUs from './components/ContactUs/ContactUs';
 // import PropularProduct from './components/PropularProduct/PropularProduct';
 
 
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "/mycart",
         element: <PrivateRoute><MyCarts></MyCarts></PrivateRoute>
+      },
+      {
+        path: "/contact",
+        element: <PrivateRoute> <ContactUs></ContactUs> </PrivateRoute>
       }
     ]
   },
