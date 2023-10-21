@@ -10,7 +10,7 @@ const MyCarts = () => {
     const {user} = useContext(AuthContext);
     const [myCart, setMyCart] = useState();
     useEffect(()=>{
-        fetch(`https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/myCard?email=${user.email}`)
+        fetch(`https://assignment-10-fashion-and-apparel-server-side-ibp4irthk.vercel.app/myCard?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             // console.log(data);
@@ -32,7 +32,7 @@ const MyCarts = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/card/${_id}`, {
+                fetch(`https://assignment-10-fashion-and-apparel-server-side-ibp4irthk.vercel.app/card/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
-// import Swal from "sweetalert2";
-// import Swal from "sweetalert2";
 
 
 const Details = () => {
@@ -28,7 +26,7 @@ const Details = () => {
         const newCard = { productId: _id, name, photo, brand, price, email: user.email }
         console.log(newCard);
         if (user) {
-            fetch('https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/card', {
+            fetch('https://assignment-10-fashion-and-apparel-server-side-ibp4irthk.vercel.app/card', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
@@ -43,7 +41,7 @@ const Details = () => {
                             title: 'Successfully!',
                             text: 'Data Added in Successfully',
                             icon: 'success',
-                            confirmButtonText: 'Cool'
+                            confirmButtonText: 'Ok'
                         })
                         
                     }
@@ -65,8 +63,10 @@ const Details = () => {
                     <p className="pb-3"><span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Brand:</span>   {product.brand}</p>
                     <p className="pb-3"><span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Type: </span>  {product.type}</p>
                     <p className="pb-3"> <span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Category: </span> {product.category}</p>
-                    {/* <p> Type: {product.type}</p> */}
-                    <p className="pb-3"><span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Rating:</span>  {product.rating}</p>
+                    <p> Type: {product.type}</p>
+                    <p className="pb-3"><span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Rating:</span>  
+                    {product.rating}
+                    </p>
                     <p className="pb-3"> <span className=" text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Price:</span>  $ {product.price}</p>
                     <div className="p-3"> <span className=" md:p-0 text-lg antialiased font-medium leading-relaxed text-blue-gray-900">Description:</span>
                         {product.description}
@@ -82,6 +82,7 @@ const Details = () => {
 
                 </marquee>
             </div> */}
+            {/* <Rating className="block" value={4} /> */}
         </div>
 
     );

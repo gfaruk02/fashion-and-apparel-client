@@ -17,7 +17,7 @@ const Addproduct = () => {
         const product = { name, brand, type, price, category, description, rating, photo };
         console.log(product);
 
-        fetch('https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/product', {
+        fetch('https://assignment-10-fashion-and-apparel-server-side-ibp4irthk.vercel.app/product', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -115,7 +115,7 @@ const Addproduct = () => {
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
-                            <span className=" text-green-800 label-text text-xl font-semibold">price</span>
+                            <span className=" text-green-800 label-text text-xl font-semibold">Price</span>
                         </label>
                         <label className="input-group">
                             <input type="number" name="price" placeholder="price " className="input input-bordered w-full" />

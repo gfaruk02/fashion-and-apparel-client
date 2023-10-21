@@ -22,7 +22,7 @@ const UpdateProduct = () => {
         // console.log(name,brand,type,price,description,rating,photo);
         console.log(product);
 
-        fetch(`https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/product/${_id}`, {
+        fetch(`https://assignment-10-fashion-and-apparel-server-side-ibp4irthk.vercel.app/product/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

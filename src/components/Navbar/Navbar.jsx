@@ -26,13 +26,14 @@ const handleToggle=(e)=>{
       .catch(error=> console.error(error))
   }
     const NavLinks = <>
-        <li className=" font-semibold text-base text-green-600"> 
+        <li className=" font-semibold text-base"> 
             <NavLink
                 to="/"
                 style={({ isActive, isPending, isTransitioning }) => {
                     return {
                     fontWeight: isActive ? "bold" : "bold",
-                    color: isPending ? "white" : "green",
+                    color: isPending ? "white" : "",
+                     backgroundColor: isActive ? "green" : "",
                     viewTransitionName: isTransitioning ? "slide" : "",
                     };
                 }}
@@ -41,13 +42,14 @@ const handleToggle=(e)=>{
             </NavLink>
         </li>
         
-        <li className=" font-semibold text-base text-green-600"> 
+        <li className=" font-semibold text-base"> 
             <NavLink
                 to="/addproduct"
                 style={({ isActive, isPending, isTransitioning }) => {
                     return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "white" : "green",
+                    color: isPending ? "white" : "",
+                     backgroundColor: isActive ? "green" : "",
                     viewTransitionName: isTransitioning ? "slide" : "",
                     };
                 }}
@@ -55,13 +57,14 @@ const handleToggle=(e)=>{
                 Add Product
             </NavLink>
         </li>
-        <li className=" font-semibold text-base text-green-600"> 
+        <li className=" font-semibold text-base"> 
             <NavLink
                 to="/mycart"
                 style={({ isActive, isPending, isTransitioning }) => {
                     return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "white" : "green",
+                    color: isPending ? "white" : "",
+                     backgroundColor: isActive ? "green" : "",
                     viewTransitionName: isTransitioning ? "slide" : "",
                     };
                 }}
@@ -69,13 +72,14 @@ const handleToggle=(e)=>{
                My Cart
             </NavLink>
         </li>
-        <li className=" font-semibold text-base text-green-600"> 
+        <li className=" font-semibold text-base"> 
             <NavLink
                 to="/register"
                 style={({ isActive, isPending, isTransitioning }) => {
                     return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "white" : "green",
+                    color: isPending ? "white" : "",
+                     backgroundColor: isActive ? "green" : "",
                     viewTransitionName: isTransitioning ? "slide" : "",
                     };
                 }}
@@ -87,7 +91,10 @@ const handleToggle=(e)=>{
 
     return (
 <div>
-<div className="navbar bg-green-200">
+  {/* <div className=" bg-green-700 py-2 dropdown-hidden ">
+   <p> Contact: 01716112252</p>
+  </div> */}
+<div className="navbar bg-green-100">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">

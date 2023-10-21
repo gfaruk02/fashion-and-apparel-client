@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader:() => fetch('https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/brand'),
+        loader:() => fetch('https://assignment-10-fashion-and-apparel-server-side-ibp4irthk.vercel.app/brand'),
 
       },
       {
@@ -48,17 +48,17 @@ const router = createBrowserRouter([
       {
         path:"/brandproduct/:brand",
         element: <ShowBrandProducts></ShowBrandProducts>,
-        loader: ()=> fetch('https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/product')
+        loader: ()=> fetch('https://assignment-10-fashion-and-apparel-server-side-ibp4irthk.vercel.app/product')
       },
       {
         path:"/details/:_id",
         element:<PrivateRoute><Details></Details>,</PrivateRoute>,
-        loader: ()=> fetch('https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/product')
+        loader: ()=> fetch('https://assignment-10-fashion-and-apparel-server-side-ibp4irthk.vercel.app/product')
       },
       {
         path:"/updateproduct/:id",
         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://assignment-10-fashion-and-apparel-server-side-bbg4pjuaw.vercel.app/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-10-fashion-and-apparel-server-side-ibp4irthk.vercel.app/product/${params.id}`)
       },
       {
         path: "/mycart",
