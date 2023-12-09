@@ -34,6 +34,7 @@ Rating
 Image
 Add Product button 
 
+
 when you fullfil all input then click Add Product button .when product add then see success message using a toast.
 
 9. SOmeThis about Brand section: When user click brand then go brand product page . this page designed one slider and some brand products . Brand product disple same info like:
